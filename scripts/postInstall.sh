@@ -17,5 +17,5 @@ timeStamp=$(echo '('`date +"%s.%N"` ' * 1000)/1' | bc)
   -H 'content-type: application/json' \
   -H 'cookie: fonce_current_session=1; fonce_current_day=1,undefined; fonce_current_user=1' \
   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36' \
-  --data-raw '{"userName":"admin","firstName":"admin","lastName":"admin","email":"'${ADMIN_EMAIL}'","createdAt":'${timeStamp}',"password":"'${ADMIN_EMAIL}'","extra":null}' \
+  --data-raw '{"userName":"admin","firstName":"admin","lastName":"admin","email":"'${ADMIN_EMAIL}'","createdAt":'${timeStamp}',"password":"'${ADMIN_PASSWORD}'","extra":null}' \
   --compressed
