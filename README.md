@@ -13,5 +13,5 @@ Deploy Dremio server with CI/CD on Elestio
 You can can open Dremio UI here:
 
     URL: https://[CI_CD_DOMAIN]
-    email:[ADMIN_EMAIL]
+    login: admin
     password: [ADMIN_PASSWORD]
