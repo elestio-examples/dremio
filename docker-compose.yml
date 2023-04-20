@@ -2,7 +2,7 @@ version: '3'
 services:
 
   dremio:
-    image: dremio/dremio-oss:latest
+    image: dremio/dremio-oss:${SOFTWARE_VERSION_TAG}
     restart: always
     ports:  
       - 172.17.0.1:9047:9047 
