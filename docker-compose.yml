@@ -6,8 +6,8 @@ services:
     restart: always
     ports:  
       - 172.17.0.1:9047:9047 
-      - 172.17.0.1:31010:31010 
-      - 172.17.0.1:45678:45678
+      - 31010:31010 
+      - 45678:45678
     volumes:
       - dremio-data:/opt/dremio/data
     environment:
