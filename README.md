@@ -15,3 +15,5 @@ You can open Dremio UI here:
     URL: https://[CI_CD_DOMAIN]
     login: admin
     password: [ADMIN_PASSWORD]
+
+You can also use ODBC/JDBC driver over port 31010
