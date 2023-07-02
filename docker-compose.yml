@@ -7,7 +7,7 @@ services:
     ports:  
       - 172.17.0.1:9047:9047 
       - 31010:31010 
-      - 45678:45678
+      - 172.17.0.1:45678:45678
     volumes:
       - dremio-data:/opt/dremio/data
     environment:
