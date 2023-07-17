@@ -49,23 +49,21 @@ You can access the Web UI at: `http://your-domain:9047`
 
 Here are some example snippets to help you get started creating a container.
 
-        version: '3.3'
+        version: "3.3"
         services:
-        
           dremio:
-            image: elestio4test/dremio-oss:$(SOFTWARE_VERSION_TAG)
+            image: elestio4test/dremio-oss:latest
             container_name: dremio
-            ports:  
-              - 172.17.0.1:9047:9047 
-              - 31010:31010 
+            ports:
+              - 172.17.0.1:9047:9047
+              - 31010:31010
               - 172.17.0.1:45678:45678
             volumes:
               - dremio:/opt/dremio/data
             environment:
               - DREMIO_MAX_MEMORY_SIZE_MB=8192
               - DREMIO_MAX_DIRECT_MEMORY_SIZE_MB=8192
-        
-        volumes: 
+        volumes:
           dremio:
 
 ### Environment variables
