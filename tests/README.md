@@ -51,25 +51,22 @@ Here are some example snippets to help you get started creating a container.
 
         version: '3.3'
         services:
-        dremio:
-            image: elestio4test/dremio-oss:${SOFTWARE_VERSION_TAG}
-            restart: always
+        
+          dremio:
+            image: elestio4test/dremio-oss:$(SOFTWARE_VERSION_TAG)
+            container_name: dremio
             ports:  
-            - 172.17.0.1:9047:9047 
-            - 31010:31010 
-            - 172.17.0.1:45678:45678
+              - 172.17.0.1:9047:9047 
+              - 31010:31010 
+              - 172.17.0.1:45678:45678
             volumes:
-            - dremio-data:/opt/dremio/data
+              - dremio:/opt/dremio/data
             environment:
-            - DREMIO_MAX_MEMORY_SIZE_MB=8192
-            - DREMIO_MAX_DIRECT_MEMORY_SIZE_MB=8192
-        volumes:
-        dremio-data:
-            driver: local
-            driver_opts:
-            type: none
-            device: ${PWD}/dremio
-            o: bind
+              - DREMIO_MAX_MEMORY_SIZE_MB=8192
+              - DREMIO_MAX_DIRECT_MEMORY_SIZE_MB=8192
+        
+        volumes: 
+          dremio:
 
 ### Environment variables
 
