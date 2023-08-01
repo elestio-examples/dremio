@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   dremio:
-    image: elestio4test/dremio-oss:latest
+    image: elestio4test/dremio:latest
     container_name: dremio
     ports:
       - 172.17.0.1:9047:9047
