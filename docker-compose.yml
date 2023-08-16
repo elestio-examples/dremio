@@ -1,12 +1,11 @@
-version: '3'
+version: "3"
 services:
-
   dremio:
-    image: dremio/dremio-oss:${SOFTWARE_VERSION_TAG}
+    image: elestio/dremio:${SOFTWARE_VERSION_TAG}
     restart: always
-    ports:  
-      - 172.17.0.1:9047:9047 
-      - 31010:31010 
+    ports:
+      - 172.17.0.1:9047:9047
+      - 31010:31010
       - 172.17.0.1:45678:45678
     volumes:
       - dremio-data:/opt/dremio/data
@@ -18,6 +17,6 @@ volumes:
   dremio-data:
     driver: local
     driver_opts:
-     type: none
-     device: ${PWD}/dremio
-     o: bind
+      type: none
+      device: ${PWD}/dremio
+      o: bind

@@ -38,7 +38,6 @@ Copy the .env file from tests folder to the project directory
 
 Edit the .env file with your own values.
 
-
 Run the project with the following command
 
     docker-compose up -d
@@ -52,7 +51,7 @@ Here are some example snippets to help you get started creating a container.
         version: "3.3"
         services:
           dremio:
-            image: elestio4test/dremio-oss:latest
+            image: elestio4test/dremio:latest
             container_name: dremio
             ports:
               - 172.17.0.1:9047:9047
@@ -70,10 +69,7 @@ Here are some example snippets to help you get started creating a container.
 
 |       Variable       | Value (example) |
 | :------------------: | :-------------: |
-| SOFTWARE_VERSION_TAG | latest          |
-
-
-
+| SOFTWARE_VERSION_TAG |     latest      |
 
 # Maintenance
 
