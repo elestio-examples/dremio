@@ -9,9 +9,20 @@ services:
       - 172.17.0.1:45678:45678
     volumes:
       - dremio-data:/opt/dremio/data
+      - tmp-data:/tmp
     environment:
       - DREMIO_MAX_MEMORY_SIZE_MB=8192
       - DREMIO_MAX_DIRECT_MEMORY_SIZE_MB=8192
+
+  cron:
+    image: alpine:3.10
+    restart: always
+    command: sh -c "while :; do sh /cron.sh; sleep 4h; done"
+    volumes:
+      - ./scripts/cron.sh:/cron.sh:z
+      - tmp-data:/tmp
+    depends_on:
+      - dremio
 
 volumes:
   dremio-data:
@@ -19,4 +30,10 @@ volumes:
     driver_opts:
       type: none
       device: ${PWD}/dremio
+      o: bind
+  tmp-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/tmp
       o: bind
