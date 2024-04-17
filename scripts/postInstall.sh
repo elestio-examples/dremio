@@ -3,7 +3,7 @@ set -o allexport; source .env; set +o allexport;
 
 #wait until the server is ready
 echo "Waiting for software to be ready ..."
-sleep 60s;
+sleep 90s;
 
 target=$(docker-compose port dremio 9047)
 
